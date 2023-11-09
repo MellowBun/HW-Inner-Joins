@@ -64,7 +64,6 @@ USE EntertainmentAgencyExample;
 --INNER JOIN Musical_Preferences on Customers.CustomerID = Musical_Preferences.CustomerID
 --INNER JOIN Musical_Styles on Musical_Preferences.StyleID = Musical_Styles.StyleID
 --INNER JOIN Entertainer_Styles on Musical_Styles.StyleID = Entertainer_Styles.StyleID
---INNER JOIN Entertainers on Entertainer_Styles.EntertainerID = Entertainers.EntertainerID
 
 -- ***********************************************************************************
 --7. Find customer ID's and common style ID's for all pairs of customers who share at least one musical preference. Do not repeat the same pair twice. (3 columns, 22 rows)
@@ -77,3 +76,8 @@ USE EntertainmentAgencyExample;
 -- ***********************************************************************************
 --8. Find the ID's of all customers who like both Salsa and Jazz styles. Eliminate all duplicates. (1 column, 2 rows)
 -- ***********************************************************************************
+--SELECT * FROM Customers
+
+--SELECT * FROM Musical_Preferences
+
+--SELECT * FROM Musical_Styles
