@@ -1,6 +1,6 @@
 USE EntertainmentAgencyExample;
 -- Inner join hw
--- HELP: 5
+-- HELP: 5, 6, 8
 
 -- ***********************************************************************************
 --1. List the first and last names of all agents who have ever booked an engagement. Eliminate all duplicates. (2 columns, 8 rows)
