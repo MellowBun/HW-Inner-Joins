@@ -1,6 +1,6 @@
 USE EntertainmentAgencyExample;
 -- Inner join hw
--- HELP: 5, 6, 8
+-- HELP: 6, 8
 
 -- ***********************************************************************************
 --1. List the first and last names of all agents who have ever booked an engagement. Eliminate all duplicates. (2 columns, 8 rows)
@@ -49,15 +49,17 @@ USE EntertainmentAgencyExample;
 
 -- ***********************************************************************************
 --5. Find the first and last names of all members of 'Jazz Persuasion'. (2 columns, 3 rows)
---HELP
 -- ***********************************************************************************
-
-
+--SELECT MbrFirstName, MbrLastName FROM Members
+--INNER JOIN Entertainer_Members ON Members.MemberID = Entertainer_Members.MemberID
+--INNER JOIN Entertainers ON Entertainer_Members.EntertainerID = Entertainers.EntertainerID
+--WHERE Entertainers.EntertainerID = 1005
 
 -- ***********************************************************************************
 --6. List the stage names of all entertainers that can play at least one musical style that aligns with customer #10008's musical preferences. Eliminate all duplicates. (1 column, 4 rows)
 --HELP
 -- ***********************************************************************************
+
 --SELECT EntStageName FROM Entertainers
 --INNER JOIN Engagements on Entertainers.EntertainerID = Engagements.EntertainerID
 --INNER JOIN Customers on Engagements.CustomerID = Customers.CustomerID
@@ -76,7 +78,10 @@ USE EntertainmentAgencyExample;
 -- ***********************************************************************************
 --8. Find the ID's of all customers who like both Salsa and Jazz styles. Eliminate all duplicates. (1 column, 2 rows)
 -- ***********************************************************************************
---SELECT * FROM Customers
+--SELECT CustomerID FROM Musical_Preferences
+--INNER JOIN Musical_Styles ON Musical_Preferences.StyleID = Musical_Styles.StyleID
+--GROUP BY Musical_Styles.StyleID
+--HAVING Musical_Styles.StyleID = 15 OR 24
 
 --SELECT * FROM Musical_Preferences
 
